@@ -37,12 +37,28 @@ export default function Header() {
       document.body.style.overflow = "";
     };
   }, [menuOpen]);
+
+  <motion.h2
+          className={styles.heading}
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+        >
+          Weekly &ndash; Top NFT
+        </motion.h2>
   
 
   return (
     <>
       <header className={`${styles.header} ${scrolled ? styles.scrolled : ""}`}>
-        <div className={styles.container}>
+        <motion.div
+          initial={{ opacity: 0, y: -30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.2 }}
+          className={styles.container}
+        >
           <Link href="/" className={styles.logo}>
             <WaveLogo size={46} />
             <span className={styles.logoText}>DiveSea</span>
@@ -69,7 +85,7 @@ export default function Header() {
             <span />
             <span />
           </button>
-        </div>
+        </motion.div>
       </header>
 
       <AnimatePresence>
