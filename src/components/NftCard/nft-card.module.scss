@@ -1,0 +1,115 @@
+.card {
+  flex-shrink: 0;
+  width: 281px;
+  background: variables.$color-white;
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: 38px 12px 60px rgba(199, 199, 199, 0.6);
+  transition: box-shadow variables.$transition-base;
+  user-select: none;
+
+  @include mixins.mobile {
+    width: 240px;
+  }
+
+  &:hover {
+    box-shadow: 38px 12px 60px rgba(180, 180, 180, 0.7);
+  }
+}
+
+.imageWrapper {
+  position: relative;
+  width: calc(100% - 28px);
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+  margin: 14px;
+  border-radius: 24px;
+}
+
+.image {
+  object-fit: cover;
+}
+
+.timer {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  width: 115px;
+  height: 34px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(28, 29, 32, 0.35);
+  backdrop-filter: blur(5px);
+  color: variables.$color-white;
+  font-family: variables.$font-family-heading;
+  font-size: 14px;
+  font-weight: 500;
+  font-variant-numeric: tabular-nums;
+  border-radius: 10px;
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+}
+
+.info {
+  padding: 6px 14px 14px;
+}
+
+.name {
+  font-family: variables.$font-family-heading;
+  font-size: 22px;
+  font-weight: 600;
+  color: variables.$color-text;
+  margin-bottom: 14px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.bidRow {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.bidInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.bidLabel {
+  font-family: variables.$font-family-heading;
+  font-size: 14px;
+  color: #94a3b8;
+  font-weight: 400;
+}
+
+.bidPrice {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-family: variables.$font-family-heading;
+  font-size: 16px;
+  font-weight: 500;
+  color: variables.$color-text;
+}
+
+.bidBtn {
+  min-width: 120px;
+  height: 50px;
+  padding: 0 24px;
+  background: variables.$color-black;
+  color: variables.$color-white;
+  font-family: variables.$font-family-heading;
+  font-size: 14px;
+  font-weight: 600;
+  border-radius: 12px;
+  letter-spacing: 0.08em;
+  transition: background variables.$transition-fast;
+
+  &:hover {
+    background: #3a3a4e;
+  }
+}
