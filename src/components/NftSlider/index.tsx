@@ -156,6 +156,10 @@ export default function NftSlider({ items }: NftSliderProps) {
           onDragEnd={handleDragEnd}
           animate={controls}
           style={{ x }}
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
         >
           {repeatedCards.map(({ card, setIndex, cardIndex }) => (
             <div key={`${setIndex}-${card.id}`} className={styles.cardSlot}>
